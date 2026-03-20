@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Волжские просторы - аккаунт</title>
+      <script> 
+
+let currentFontSize = 16;
+
+function changeFontSize(step){
+  currentFontSize += step * 2;
+  if (currentFontSize < 12) currentFontSize = 12;
+  if (currentFontSize > 32) currentFontSize = 32;
+
+  document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+}
+
+function toggleAnimations( ){
+  document.body.classList.toggle('no-animations');
+}
+
+  </script>
+</head>
+
+<body>
+    <header class="header-inner site-header">
+        <div class="headerleft">
+            <a href="index-dark.html"><img src="photo/ВолжскиеПросторы.webp" alt="Волжские просторы лого"
+                    class="logo-img"></a>
+        </div>
+        <span style="color:rgb(54, 53, 53)">
+            <h1>ВОЛЖСКИЕ ПРОСТОРЫ</h1>
+        </span>
+    </header>
+    <hr>
+    <div class="div12">
+        <a href="index-dark.html"><button class="rasp">Основная страница</button></a>
+        <a href="schedule.html"><button class="rasp">Расписание поездок</button></a>
+        <a href="tour.html"><button class="rasp">Описание экскурсии</button></a>
+        <a href="singin.html"><button class="rasp">Регистрация / Вход</button></a>
+        <a href="account.html"><button class="rasp">Личный кабинет</button></a>
+    </div>
+
+<div class="accessibility-panel rasp1">
+        <button onclick="changeFontSize(1)" class="btn3">A+</button>
+        <button onclick="changeFontSize(-1)" class="btn3">A-</button>
+        <button onclick="toggleAnimations( )" class="btn4">Без анимаций</button>
+      </div>
+
+
+  <main class="container">
+    <section class="profile-header">
+        <div class="profile-avatar">
+            <img src="photo/avatarexample.jpg" alt="User Avatar"> 
+            </div>
+        <div class="profile-main-info">
+            <h2 id="userName">Иван Иванов</h2>
+            <p class="user-status">Постоянный путешественник ★</p>
+        </div>
+        <div class="profile-actions">
+            <button class="rasp">Редактировать</button>
+            <button class="rasp" style="background: #883939; color: white;">Выйти</button>
+        </div>
+    </section>
+
+    <section class="info-grid">
+        <div class="info-card">
+            <label>Телефон</label>
+            <p>+1 123 777-67-67</p>
+        </div>
+        <div class="info-card">
+            <label>Электронная почта</label>
+            <p>primer@tuttamail.com</p>
+        </div>
+        <div class="info-card">
+            <label>Дата регистрации</label>
+            <p>12.01.2024</p>
+        </div>
+        <div class="info-card">
+            <label>Бонусные баллы</label>
+            <p style="color: gold; font-weight: bold;">1 миллион баллов</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <h2 class="section-title">Мои экскурсии</h2>
+    
+    <div class="cards-grid">
+        <article class="card menu-card">
+            <div class="status-badge active">Предстоит</div>
+            <img src="photo/НН.webp" alt="Нижний Новгород">
+            <div class="card-body">
+                <h4>Нижний Новгород</h4>
+                <p class="muted">Дата: 25 мая 2026</p>
+                <p class="price">5000 ₽ (Оплачено)</p>
+                <a href="tour.html" class="details-link">Детали поездки →</a>
+            </div>
+        </article>
+
+        <article class="card menu-card archived">
+            <div class="status-badge">Завершена</div>
+            <img src="photo/Москва.jpeg" alt="Москва">
+            <div class="card-body">
+                <h4>Москва: Центр</h4>
+                <p class="muted">Дата: 10 февраля 2026</p>
+                <p class="price">2500 ₽</p>
+                <button class="btn-review">Оставить отзыв</button>
+            </div>
+        </article>
+    </div>
+</main>
+    <hr>
+    <footer class="site-footer">
+        <p align="center">Связаться с нами: +7 949 666-69-67</p>
+    </footer>
+</body>
+
+</html>
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->

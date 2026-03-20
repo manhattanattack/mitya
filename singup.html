@@ -1,0 +1,42 @@
+<html>
+	<head> 
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Волжские просторы - вход</title>
+	</head>
+	<body>
+
+<div class="accessibility-panel rasp1">
+        <button onclick="changeFontSize(1)" class="btn3">A+</button>
+        <button onclick="changeFontSize(-1)" class="btn3">A-</button>
+        <button onclick="toggleAnimations( )" class="btn4">Без анимаций</button>
+      </div>
+
+
+		<div id="window1">
+            <span style="color:white"><div id="title" align="center"><font size="20px">Вход</font></div></span>
+            <div id="login"><input type="text" placeholder="Email" id="inL"></div>
+			<div id="password"><input type="text" placeholder="Пороль" id="inP"></div>
+			<span style="color:white"><div id="ch"><input type="checkbox" id="checkbox">Запомнить меня?</div></span>
+			<a href="index-dark.html"><div id="dbtn"><button id="btn"><font size="5px">Войти</font></button></div></a>
+			<span style="color:white"><div id="create">Нету аккаунта?
+				<a href="singin.html">Зарегистрируйтесь!</a></div></span>
+
+<script>
+	let currentFontSize = 16;
+
+function changeFontSize(step){
+  currentFontSize += step * 2;
+  if (currentFontSize < 12) currentFontSize = 12;
+  if (currentFontSize > 32) currentFontSize = 32;
+
+  document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+}
+
+function toggleAnimations( ){
+  document.body.classList.toggle('no-animations');
+}
+</script>
+
+		</div>
+	</body>
+</html>

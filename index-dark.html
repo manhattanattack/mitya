@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Волжские просторы - главная</title>
+    </head>
+    <body>
+        <header class="header-inner site-header">
+            <div class="headerleft">
+            <a href="index-dark.html"><img src="photo/ВолжскиеПросторы.webp" alt="Волжские просторы лого" class="logo-img"></a>
+                </div>
+                 <span style="color:rgb(54, 53, 53)"><h1>ВОЛЖСКИЕ ПРОСТОРЫ</h1></span>
+        </header>
+        <hr>
+
+<div class="accessibility-panel rasp1">
+        <button onclick="changeFontSize(1)" class="btn3">A+</button>
+        <button onclick="changeFontSize(-1)" class="btn3">A-</button>
+        <button onclick="toggleAnimations( )" class="btn4">Без анимаций</button>
+      </div>
+
+
+        <div class="div12">
+            <a href=index-light.html><button class="rasp">Перейти на светлую сторону</button></a>
+            <a href="schedule.html"><button class="rasp">Расписание поездок</button></a>
+            <a href="tour.html"><button class="rasp">Описание экскурсии</button></a>
+            <a href="singin.html"><button class="rasp">Регистрация / Вход</button></a>
+            <a href="account.html"><button class="rasp">Личный кабинет</button></a>
+        </div>
+<div align="center">
+<p style="color:rgb(183,183,37)">
+Туризм и культурный отдых играют важную роль в современном обществе,</p>
+ <p style="color:rgb(183,183,37)">способствуя развитию городов и популяризации их наследия.</p>
+  <p style="color:rgb(183,183,37)">Нижний Новгород — один из старейших и красивейших городов России,</p>
+   <p style="color:rgb(183,183,37)">богатый историческими и культурными достопримечательностями.
+</p>
+</div>
+
+<h2 align="center">Наши направления</h2>
+<div class="slider-container" id="main-slider">
+    <div class="slider-wrapper">
+        <div class="slide">
+            <img src="photo/Москва.jpeg" alt="Москва">
+            <div class="slide-caption">Величественная Москва</div>
+        </div>
+        <div class="slide">
+            <img src="photo/НН.webp" alt="Нижний Новгород">
+            <div class="slide-caption">Закаты Нижнего Новгорода</div>
+        </div>
+        <div class="slide">
+            <img src="photo/Новосиб.webp" alt="Новосибирск">
+            <div class="slide-caption">Сердце Сибири — Новосибирск</div>
+        </div>
+    </div>
+    <button class="slider-btn prev-btn">❮</button>
+    <button class="slider-btn next-btn">❯</button>
+</div>
+
+<h2 align="center">Отзывы туристов</h2>
+<div class="slider-container reviews-container" id="reviews-slider" style="box-shadow: none;">
+    <div class="slider-wrapper">
+        <div class="review-card">
+            <p class="review-content">"Потрясающая организация тура! Нижний Новгород открылся для меня с новой стороны. Спасибо «Волжским просторам»!"</p>
+            <p class="review-author">— Абашкин Г.</p>
+        </div>
+        <div class="review-card">
+            <p class="review-content">"Ездили семьей в Новосибирск. Очень удобное расписание и отличные гиды. Рекомендую!"</p>
+            <p class="review-author">— Кравченко И.</p>
+        </div>
+        <div class="review-card">
+            <p class="review-content">"Лучший сервис по бронированию экскурсий. Все четко, понятно и доступно."</p>
+            <p class="review-author">— Крикунов А.</p>
+        </div>
+    </div>
+    <button class="slider-btn prev-btn">❮</button>
+    <button class="slider-btn next-btn">❯</button>
+</div>
+
+    <hr>
+    <footer class="site-footer">
+       <p align="center">Связаться с нами: +7 949 666-69-67</p>
+    </footer>
+
+<script>
+function initSlider(sliderId) {
+    const container = document.getElementById(sliderId);
+    const wrapper = container.querySelector('.slider-wrapper');
+    const slides = container.querySelectorAll('.slide, .review-card');
+    const prevBtn = container.querySelector('.prev-btn');
+    const nextBtn = container.querySelector('.next-btn');
+    
+    let index = 0;
+
+    function updateSlider() {
+        wrapper.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateSlider();
+    });
+    
+    // Автоматическая прокрутка каждые 5 секунд
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+    }, 5000);
+}
+
+initSlider('main-slider');
+initSlider('reviews-slider');
+</script>
+<script>
+let currentFontSize = 16;
+
+function changeFontSize(step){
+  currentFontSize += step * 2;
+  if (currentFontSize < 12) currentFontSize = 12;
+  if (currentFontSize > 32) currentFontSize = 32;
+
+  document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+}
+
+function toggleAnimations( ){
+  document.body.classList.toggle('no-animations');
+}
+</script>
+
+    </body>
+</html>
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->
+ <!-- ☰ -->
+<!-- ☰ -->
+<!-- ☰ -->

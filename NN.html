@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Волжские просторы - Нижний Новгород</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <header class="header-inner site-header">
+    <div class="headerleft">
+      <a href="index-dark.html"><img src="photo/ВолжскиеПросторы.webp" alt="Волжские просторы лого"
+          class="logo-img"></a>
+    </div>
+    <span style="color:rgb(54, 53, 53)">
+      <h1>ВОЛЖСКИЕ ПРОСТОРЫ</h1>
+    </span>
+  </header>
+  <hr>
+  <div class="div12">
+    <a href="index-dark.html"><button class="rasp">Основная страница</button></a>
+    <a href="schedule.html"><button class="rasp">Расписание поездок</button></a>
+    <a href="tour.html"><button class="rasp">Описание экскурсии</button></a>
+    <a href="singin.html"><button class="rasp">Регистрация / Вход</button></a>
+    <a href="account.html"><button class="rasp">Личный кабинет</button></a>
+  </div>
+<div class="accessibility-panel rasp1">
+        <button onclick="changeFontSize(1)" class="btn3">A+</button>
+        <button onclick="changeFontSize(-1)" class="btn3">A-</button>
+        <button onclick="toggleAnimations( )" class="btn4">Без анимаций</button>
+      </div>
+  <main class="container">
+    <section class="menu-section">
+
+          <img src="C:\Users\USER\Desktop\СИП 24-1\Перелыгин\Практика1\photo\НН.webp" alt="Новосибирск" height="400" width="600">
+            <h3>Билет в Нижний Новгород</h3>
+            <span style="color:rgb(233, 233, 233)">
+              <h5><p class="desc">Билет 5000 ₽ / Детский 2500 ₽</p></h5>
+            </span>
+            <span style="color:rgb(233, 233, 233)">
+              <p class="muted"><u>Осталось мест: 2</u></p>
+            </span>
+
+              <div class="timer-container">
+    <h2>До конца козырной акции осталось</h2>
+    <div class="timer">
+        <div class="time-box">
+            <span id="days">00</span>
+            <p>Дней</p>
+        </div>
+        <div class="time-box">
+            <span id="hours">00</span>
+            <p>Часов</p>
+        </div>
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <p>Минут</p>
+        </div>
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <p>Секунд</p>
+        </div>
+    </div>
+</div>
+
+            <span style="color:rgb(233, 233, 233)">
+              <h4><p class="muted">Экскурсия по городу пройдёт следующим образом:</p></h4>
+            </span>
+            <span style="color:rgb(233, 233, 233)">
+              <p class="muted">1. Парк «Швейцария». Крупнейший парк, расположенный вдоль реки Оки. Здесь есть смотровые площадки с видом на Оку, детские комплексы, скейт-парк и спортивные зоны.<p>
+            </span>
+
+            <span style="color:rgb(233, 233, 233)">
+              <p class="muted">2. Большая Покровская улица. Главная пешеходная улица, соединяет площадь Горького с площадью Минина. Здесь расположены театры, кафе, памятник Максиму Горькому. </p>
+            </span>
+
+            <span style="color:rgb(233, 233, 233)">
+              <p class="muted">3. Музей-заповедник «Щелоковский хутор». Архитектурно-этнографический музей-заповедник, в экспозиции — памятники деревянного зодчества Нижегородского Поволжья: избы, церкви и амбары.</p>
+            </span>
+
+            <span style="color:rgb(233, 233, 233)">
+              <p class="muted">4. Нижегородский государственный художественный музей. Один из старейших региональных музеев России, в фонде — около 12 тыс. музейных предметов, включая коллекции русского, западноевропейского и восточного искусства. Музей располагается в трёх зданиях: в Доме военного губернатора (русское искусство), Доме купца Сироткина (зарубежное искусство) и здании Нижегородского выставочного центра (русское искусство XX века).</p>
+            </span>
+
+  <footer class="site-footer">
+    <p align="center">Связаться с нами: +7 949 666-69-67</p>
+  </footer>
+
+<script>
+function startTimer() {
+    const THREE_DAYS = 3 * 24 * 60 * 60 * 1000; 
+
+    function updateCounter() {
+        let timerEnd = localStorage.getItem('timerEnd');
+        let now = Date.now();
+
+        if (!timerEnd || now > parseInt(timerEnd)) {
+            timerEnd = now + THREE_DAYS;
+            localStorage.setItem('timerEnd', timerEnd);
+        }
+
+        let diff = parseInt(timerEnd) - now;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if(document.getElementById('days')) {
+            document.getElementById('days').textContent = String(d).padStart(2, '0');
+        }
+        document.getElementById('hours').textContent = String(h).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 1000);
+}
+
+startTimer();
+
+
+let currentFontSize = 16;
+
+function changeFontSize(step){
+  currentFontSize += step * 2;
+  if (currentFontSize < 12) currentFontSize = 12;
+  if (currentFontSize > 32) currentFontSize = 32;
+
+  document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+}
+
+function toggleAnimations( ){
+  document.body.classList.toggle('no-animations');
+}
+</script>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

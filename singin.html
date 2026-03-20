@@ -1,0 +1,46 @@
+<html>
+	<head> 
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Волжские просторы - регистрация</title>
+	</head>
+	<body>
+
+<div class="accessibility-panel rasp1">
+        <button onclick="changeFontSize(1)" class="btn3">A+</button>
+        <button onclick="changeFontSize(-1)" class="btn3">A-</button>
+        <button onclick="toggleAnimations( )" class="btn4">Без анимаций</button>
+      </div>
+
+
+		<div id="window">
+			<span style="color:white"><div id="title" align="center"><font size="20px">Регистрация</font></div></span>
+		<div class="div13">
+			<div id="login"><input type="text" placeholder="ФИО" id="inL"></div>
+            <div id="login"><input type="text" placeholder="Email" id="inL"></div>
+			<div id="password"><input type="text" placeholder="Пороль" id="inP"></div>
+			<div id="password"><input type="text" placeholder="Подтвердите пороль" id="inP"></div>
+			<span style="color:white"><div id="ch"><input type="checkbox" id="checkbox">Запомнить меня?</div></span>
+		</div>
+			<a href="index-dark.html"><div id="dbtn"><button id="btn"><font size="5px">Зарегистрироваться</font></button></div></a>
+			<span style="color:white"><div id="create">Уже есть аккаунт?
+				<a href="singup.html">Войдите!</a></div></span>
+
+<script>
+	let currentFontSize = 16;
+
+function changeFontSize(step){
+  currentFontSize += step * 2;
+  if (currentFontSize < 12) currentFontSize = 12;
+  if (currentFontSize > 32) currentFontSize = 32;
+
+  document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+}
+
+function toggleAnimations( ){
+  document.body.classList.toggle('no-animations');
+}
+</script>
+
+		</div>
+	</body>
+</html>

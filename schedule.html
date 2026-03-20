@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Волжские просторы - расписание</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <header class="header-inner site-header">
+    <div class="headerleft">
+      <a href="index-dark.html"><img src="photo/ВолжскиеПросторы.webp" alt="Волжские просторы лого"
+          class="logo-img"></a>
+    </div>
+    <span style="color:rgb(54, 53, 53)">
+      <h1>ВОЛЖСКИЕ ПРОСТОРЫ</h1>
+    </span>
+  </header>
+  <hr>
+  <div class="div12">
+    <a href="index-dark.html"><button class="rasp">Основная страница</button></a>
+    <a href="schedule.html"><button class="rasp">Расписание поездок</button></a>
+    <a href="tour.html"><button class="rasp">Описание экскурсии</button></a>
+    <a href="singin.html"><button class="rasp">Регистрация / Вход</button></a>
+    <a href="account.html"><button class="rasp">Личный кабинет</button></a>
+  </div>
+  <main class="container">
+    <section class="menu-section">
+      <div class="search-wrapper">
+        <p></p>
+        <h4><label>Поиск:  <input id="menuSearch" type="search" placeholder="Найти Путевку..."></label></h4>
+      </div>
+
+      <div class="accessibility-panel rasp1">
+        <button onclick="changeFontSize(1)" class="btn3">A+</button>
+        <button onclick="changeFontSize(-1)" class="btn3">A-</button>
+        <button onclick="toggleAnimations( )" class="btn4">Без анимаций</button>
+      </div>
+
+      <div class="cards-grid" id="menuGrid">
+
+        <div class="cards-grid" id="menuGrid">
+
+  <a href="Novosib.html" class="card-link">
+    <article class="card menu-card holographic-card">
+      <img src="photo/Новосиб.webp" alt="Новосибирск">
+      <div class="card-body">
+        <h4>Билет в Новосибирск</h4>
+        <p class="desc">Цена: 5000 ₽ / Детский 2500 ₽</p>
+        <p class="muted">Красивое место.</p>
+        <p class="muted">Осталось мест: 13</p>
+      </div>
+    </article>
+  </a>
+
+  <a href="NN.html" class="card-link">
+    <article class="card menu-card holographic-card">
+      <img src="photo/НН.webp" alt="Нижний Новгород">
+      <div class="card-body">
+        <h4>Билет в Нижний Новгород</h4>
+        <p class="desc">Цена: 5000 ₽ / Детский 2500 ₽</p>
+        <p class="muted">Удивительное место.</p>
+        <p class="muted">Осталось мест: 2</p>
+      </div>
+    </article>
+  </a>
+
+  <a href="Moscow.html" class="card-link">
+    <article class="card menu-card holographic-card">
+      <img src="photo/Москва.jpeg" alt="Москва">
+      <div class="card-body">
+        <h4>Билет в Москву</h4>
+        <p class="desc">Цена: 5000 ₽ / Детский 2500 ₽</p>
+        <p class="muted">Интересное место.</p>
+        <p class="muted">Осталось мест: 7</p>
+      </div>
+    </article>
+  </a>
+
+</div>
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p align="center">Связаться с нами: +7 949 666-69-67</p>
+  </footer>
+  <script>
+// что-то типо поиска
+    const search = document.getElementById('menuSearch');
+    if (search) {
+      const grid = document.getElementById('menuGrid');
+      const cards = grid.querySelectorAll('.menu-card');
+      search.addEventListener('input', () => {
+        const q = search.value.trim().toLowerCase();
+        cards.forEach(c => {
+          const text = c.innerText.toLowerCase();
+          c.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    };
+// тут адаптация
+let currentFontSize = 16;
+
+function changeFontSize(step){
+  currentFontSize += step * 2;
+  if (currentFontSize < 12) currentFontSize = 12;
+  if (currentFontSize > 32) currentFontSize = 32;
+
+  document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+}
+
+function toggleAnimations( ){
+  document.body.classList.toggle('no-animations');
+}
+
+// таймер
+
+function startTimer() {
+  if (!localStorage.getItem('timerEnd')){
+    localStorage.setItem('timerEnd', Date.now() + 24 * 60 * 60 * 1000);
+  }
+  setInterval(() => {
+    let diff = Number(localStorage.getItem('timerEnd') - Date.now());
+    if(diff <=0){
+      localStorage.setItem('timerEnd', Date.now()+ 24 * 60 * 60 * 1000);
+      diff = 24 * 60 * 60 * 1000;
+    }
+    document.getElementById('hours').textContent = String(Math.floor(diff/3600000)).padStart(2,'0');
+    document.getElementById('minutes').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    document.getElementById('seconds').textContent = String(Math.floor((diff%6000)/1000)).padStart(2,'0');
+  }, 1000);
+}
+startTimer();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
